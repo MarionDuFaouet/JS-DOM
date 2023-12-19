@@ -28,15 +28,15 @@
 
         // 1 - stocker le titre dans une variable
         let title = document.querySelector('h1');
+        title.innerHTML = "<span>Mon super titre</span>";
 
         // 2 - stocker le paragraphe dans une variable
-        let text = document.querySelector('p');
+        let paragraphe = document.querySelector('p');
 
         // 3 - Changer le titre "Mon titre à changer" => "<span>Mon super titre</span>"
-        title.innerHTML = "<span>Mon super titre</span>";
         // 4 - Ajouter un ! à la fin du paragraphe : "voluptatem" => "voluptatem !" sans remplacer le texte
-        text.innerHTML = (text.innerHTML + "!");
-        console.log(text.innerText);
+        paragraphe.innerText += "!";
+        paragraphe.classList.add("red");
         // 5 - Ajouter la classe "red" au paragraphe
 
     </script>

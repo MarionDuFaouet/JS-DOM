@@ -15,6 +15,21 @@
 <!-- À appeler dans une feuille js à part -->
 <script type="text/javascript">
     let pizzas = ["5 fromages", "Montagnarde", "Tartiflette", "Marguerita supplément fromage", "Reine mozza"];
+    let pizzeList = document.querySelector('ul');
+    // let pizzeListe = document.createElement('li');
+    
+
+    
+    //pour chaque pizza, dont le nom est rangé dans le tableau pizza, faire :
+    for (let i=0; i<pizzas.length; i++){
+        //Créer un élément de type li
+        let li = document.createElement('li');
+        //Attacher l'élément créé à son parent ul
+        pizzeList.appendChild(li);
+        // remplir l'intérieur de l'élément de type li avec le nom trouvé dans le tableau pizza
+        li.innerText = pizzas[i];
+    }
+
 
     /*
      * Faire une boucle sur les pizzas

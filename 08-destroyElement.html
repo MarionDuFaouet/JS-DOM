@@ -1,29 +1,42 @@
 <!doctype html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Mon super titre</title>
 </head>
+
 <body>
 
-<div id="yield">
-    <h3>Quelques messages</h3>
-    <p>Message à conserver</p>
-    <p>Message à supprimer !</p>
-    <p>Joli message !</p>
-    <p>Vous devez supprimer ce message !</p>
-</div>
+    <div id="yield">
+        <h3>Quelques messages</h3>
+        <p>Message à conserver</p>
+        <p>Message à supprimer !</p>
+        <p>Joli message !</p>
+        <p>Vous devez supprimer ce message !</p>
+    </div>
 
-<button type="button" onclick="suppress()">Supprimer</button>
+    <button type="button" onclick="suppress()">Supprimer</button>
 
 
-<!-- À appeler dans une feuille js à part -->
-<script type="text/javascript">
+    <!-- À appeler dans une feuille js à part -->
+    <script type="text/javascript">
+        let yieldElement = document.getElementById("yield");
+        let messageElements = yieldElement.querySelectorAll("p");
 
-    // Supprimer les message à supprimer ! (qui contiennent le mot "supprimer")
-    // écrire la fonction qui fera le travail de suppression lors du "click" sur le bouton
+        //supprimer les enfants 3 et 5 du parent #yield 
+        messageElements.forEach(messageElement => {
+            if (messageElement.innertext.toLowerCase().includes("supprimer"))
+                messageElement.remove();
+        });
 
-</script>
+
+
+        // Supprimer les message à supprimer ! (qui contiennent le mot "supprimer")
+        // écrire la fonction qui fera le travail de suppression lors du "click" sur le bouton
+
+    </script>
 </body>
+
 </html>

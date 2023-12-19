@@ -1,28 +1,61 @@
 <!doctype html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Mon super titre</title>
 </head>
+
 <body>
 
-<p id="coffee">
-</p>
+    <p id="coffee">
+    </p>
 
-<!-- À appeler dans une feuille js à part -->
-<script type="text/javascript">
-    let coffee = document.querySelector('#coffee');
+    <!-- À appeler dans une feuille js à part -->
+    <script type="text/javascript">
 
-    /*
-     * Créer et "injecter" dans coffee un élément (au sens du DOM) de type "span" avec le café de votre choix.
-     * Afin de corser l'affaire, ce café (plus exactement le "span" qui l'encadre) aura :
-     *
-     * - une classe 'selected',
-     * - un contenu avec votre café préféré,
-     * - une couleur marron (en modifiant directement le style de l'élément "span")
-     *
-     */
-</script>
+        // V1
+        // let coffee = document.querySelector('#coffee');
+        // coffee.innerHTML = "<span>colombien</span>";
+        // coffee.classList.add = ("selected");
+        // coffee.style.color= "brown"
+
+
+
+        // V2
+        // let coffee = document.querySelector('#coffee');
+
+        // let newSpan = document.createElement("span");
+        // let newCoffee = document.createTextNode("colombien");
+        // newSpan.classList.add("selected");
+        // newSpan.appendChild(newCoffee);
+        // document.body.insertBefore(newSpan, coffee);
+        // newSpan.style.color = "brown";
+
+
+        // VERSION CORRIGEE
+                let coffee = document.querySelector('#coffee');
+                let favoriteCoffee = document.createElement('span');
+
+                favoriteCoffee.classList.add ='selected';
+                favoriteCoffee.textContent = "colombien";
+                favoriteCoffee.style.color = "brown";
+
+                coffee.appendChild(favoriteCoffee);
+
+
+        /*
+         * Créer et "injecter" dans coffee un élément (au sens du DOM) de type "span" avec le 
+         * café de votre choix.
+         * Afin de corser l'affaire, ce café (plus exactement le "span" qui l'encadre) aura :
+         *
+         * - une classe 'selected',
+         * - un contenu avec votre café préféré,
+         * - une couleur marron (en modifiant directement le style de l'élément "span")
+         *
+         */
+    </script>
 </body>
+
 </html>
